@@ -2,8 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AvatarData
+public class AvatarData : MonoBehaviour
 {
-    public int headIndex = 2;
-    public int pantsIndex = 2;
+    public string data;
+    public SheetsHandler sheetsHandler;
+
+    public void CollectData()
+    {
+        //data = JsonUtility.ToJson(AvatarCustomizer.avatarDataDictionary);
+        data = Newtonsoft.Json.JsonConvert.SerializeObject(AvatarCustomizer.avatarDataDictionary);
+    }
+
+    public void SendData()
+    {
+        sheetsHandler.SendText(data);
+    }
 }

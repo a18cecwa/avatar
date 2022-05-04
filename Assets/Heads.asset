@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Heads
   m_EditorClassIdentifier: 
   optionsList:
-  - {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
-  - {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
-  - {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 6572481323177019961, guid: d4543edb932cd554db3f037cf1dd9700, type: 3}
+  - {fileID: 2432515831849053322, guid: 2de61891c75f8fa46a6eeffdd5184d02, type: 3}
+  - {fileID: 4768784563731536959, guid: aa41c94f29c0e9a44af7d318405e85f8, type: 3}

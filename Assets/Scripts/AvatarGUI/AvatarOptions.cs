@@ -5,5 +5,11 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Data", menuName = "ScriptableObjects/AvatarOptions", order = 1)]
 public class AvatarOptions : ScriptableObject
 {
-    public List<Sprite> optionsList;
+    public List<GameObject> optionsList;
+}
+
+public enum AvatarOptionType
+{
+    EYES,
+    MOUTH
 }

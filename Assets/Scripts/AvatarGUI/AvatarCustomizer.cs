@@ -4,16 +4,36 @@ using UnityEngine;
 
 public class AvatarCustomizer : MonoBehaviour
 {
-    [SerializeField] AvatarOptions headOptions;
-    [SerializeField] UnityEngine.UI.Image headImage;
-    AvatarData avatarData = new AvatarData();
+    [SerializeField] AvatarOptions options;
+    [SerializeField] Transform position;
+    [SerializeField] int index;
+    [SerializeField] AvatarOptionType type;
+
+    public static Dictionary<AvatarOptionType, int> avatarDataDictionary = new Dictionary<AvatarOptionType, int>();
 
     private void Start()
     {
-        DisplayAvatarData();
+        avatarDataDictionary.Add(type, index);
+        DisplayAvatar();
     }
-    void DisplayAvatarData()
+
+    void DisplayAvatar()
     {
-        headImage.sprite = headOptions.optionsList[avatarData.headIndex];
+        position.DestroyAllChildren();
+        Instantiate(options.optionsList[index], position);
+    }
+
+    public void NextOption()
+    {
+        index = (index + 1) % options.optionsList.Count;
+        avatarDataDictionary[type] = index;
+        DisplayAvatar();
+    }
+
+    public void PreviousOption()
+    {
+        index = (index + options.optionsList.Count - 1) % options.optionsList.Count;
+        avatarDataDictionary[type] = index;
+        DisplayAvatar();
     }
 }
