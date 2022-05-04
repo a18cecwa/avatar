@@ -8,4 +8,14 @@ public class FormObject : ScriptableObject
 {
     public string url;
     public string entryId;
+
+    public IEnumerator Post(string data)
+    {
+        WWWForm form = new WWWForm();
+        form.AddField(entryId, data);
+
+        UnityWebRequest www = UnityWebRequest.Post(url, form);
+
+        yield return www.SendWebRequest();
+    }
 }
