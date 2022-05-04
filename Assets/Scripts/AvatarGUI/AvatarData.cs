@@ -5,7 +5,7 @@ using UnityEngine;
 public class AvatarData : MonoBehaviour
 {
     public string data;
-    public SheetsHandler sheetsHandler;
+    [SerializeField] FormObject form;
 
     public void CollectData()
     {
@@ -15,6 +15,6 @@ public class AvatarData : MonoBehaviour
 
     public void SendData()
     {
-        sheetsHandler.SendText(data);
+        StartCoroutine(form.Post(data));
     }
 }

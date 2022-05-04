@@ -2079,7 +2079,6 @@ GameObject:
   - component: {fileID: 1537745974}
   - component: {fileID: 1537745973}
   - component: {fileID: 1537745972}
-  - component: {fileID: 1537745976}
   m_Layer: 5
   m_Name: Button (1)
   m_TagString: Untagged
@@ -2120,7 +2119,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data: 
-  sheetsHandler: {fileID: 1537745976}
+  form: {fileID: 11400000, guid: 4a5f2ee0d5f5ca74799156f78e8ccaf4, type: 2}
 --- !u!114 &1537745973
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2227,19 +2226,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1537745970}
   m_CullTransparentMesh: 1
---- !u!114 &1537745976
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1537745970}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd579263262cf1242aa01fba7e8564e5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  formObject: {fileID: 11400000, guid: 4a5f2ee0d5f5ca74799156f78e8ccaf4, type: 2}
 --- !u!1 &1666186105
 GameObject:
   m_ObjectHideFlags: 0
