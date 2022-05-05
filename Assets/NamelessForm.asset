@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   url: https://docs.google.com/forms/u/0/d/e/1FAIpQLSf9hBmUneXFWdSIKP2caL2R0G_mtDElpv9pgapO747MbYdZvw/formResponse
   entryId: entry.1432675603
+  keys: Key1, Key2, Key3

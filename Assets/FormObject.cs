@@ -15,8 +15,9 @@ public class FormObject : ScriptableObject
 {
     [SerializeField] string url;
     [SerializeField] string entryId;
+    [SerializeField] string keys;
 
-    string data;
+    Dictionary<string, string> data = new Dictionary<string, string>();
 
     public IEnumerator Post(string data)
     {
@@ -30,20 +31,19 @@ public class FormObject : ScriptableObject
 
     public IEnumerator Post()
     {
-        yield return Post(data);
+        yield return Post(Newtonsoft.Json.JsonConvert.SerializeObject(data));
     }
 
-    public void ApendToData(string data)
+    public void Set(string key, string value)
     {
-        this.data += data;
+        if (data.ContainsKey(key))
+            data[key] = value; // Is this neccessary or does Dictionary.Add already work like this?
+        else
+            data.Add(key, value);
     }
 
-    public void ClearData()
+    public void Clear()
     {
-        data = "";
+        data.Clear();
     }
-
-    //TODO: Expand entryId to a dictionary to map the entryId to an entry-title.
-    //TODO: Add a data-variable and methods to access it to add data to specific entries
-    //TODO: Generate enums? variables? based on the entry-name, to not have to rely on strings...
 }

@@ -7,13 +7,10 @@ public class AvatarCustomizer : MonoBehaviour
     [SerializeField] AvatarOptions options;
     [SerializeField] Transform position;
     [SerializeField] int index;
-    [SerializeField] AvatarOptionType type;
-
-    public static Dictionary<AvatarOptionType, int> avatarDataDictionary = new Dictionary<AvatarOptionType, int>();
+    [SerializeField] FormData data;
 
     private void Start()
     {
-        avatarDataDictionary.Add(type, index);
         DisplayAvatar();
     }
 
@@ -26,14 +23,14 @@ public class AvatarCustomizer : MonoBehaviour
     public void NextOption()
     {
         index = (index + 1) % options.optionsList.Count;
-        avatarDataDictionary[type] = index;
+        data.UpdateValue(index.ToString());
         DisplayAvatar();
     }
 
     public void PreviousOption()
     {
         index = (index + options.optionsList.Count - 1) % options.optionsList.Count;
-        avatarDataDictionary[type] = index;
+        data.UpdateValue(index.ToString());
         DisplayAvatar();
     }
 }

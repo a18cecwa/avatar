@@ -7,9 +7,3 @@ public class AvatarOptions : ScriptableObject
 {
     public List<GameObject> optionsList;
 }
-
-public enum AvatarOptionType
-{
-    EYES,
-    MOUTH
-}
